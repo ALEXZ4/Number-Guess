@@ -1,0 +1,176 @@
+/* Basic Reset and Body Styling */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.game-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+    font-weight: 600;
+}
+
+.instructions {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between input and button */
+    margin-bottom: 25px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+#guess-input {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1em;
+    width: 150px; /* Default width */
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#guess-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#guess-input:focus {
+    outline: none;
+    border-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Hide number input arrows */
+#guess-input::-webkit-outer-spin-button,
+#guess-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* #guess-input[type=number] {
+  -moz-appearance: textfield; /* Firefox }*/
+
+
+.action-button {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff6b6b; /* Coral red */
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover {
+    background-color: #ee5253; /* Darker coral red */
+    transform: translateY(-2px);
+}
+
+.action-button:active {
+    transform: translateY(0);
+}
+
+/* Message Area */
+.message-area {
+    margin-bottom: 25px;
+    min-height: 50px; /* Prevent layout shift */
+}
+
+.hint {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e0fa7a; /* Yellow for hints */
+    margin-bottom: 5px;
+}
+
+.attempts {
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+/* Win Message */
+.win-message-container {
+    background-color: rgba(76, 175, 80, 0.8); /* Greenish success background */
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+#win-message-text {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+#restart-button {
+    background-color: #48dbfb; /* Light blue */
+}
+
+#restart-button:hover {
+    background-color: #0abde3; /* Darker light blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .instructions {
+        font-size: 1em;
+    }
+    .input-area {
+        flex-direction: column; /* Stack input and button */
+        gap: 10px;
+    }
+    #guess-input {
+        width: 80%; /* Make input wider */
+    }
+    .action-button {
+        width: 60%; /* Make button wider */
+        padding: 10px 20px;
+    }
+    .hint {
+        font-size: 1.1em;
+    }
+    #win-message-text {
+        font-size: 1.3em;
+    }
+}
